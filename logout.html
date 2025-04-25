@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logging Out...</title>
+    <script>
+        // Clear login data
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("currentUser");
+
+        // Redirect to login page
+        window.location.href = "login.html";
+    </script>
+</head>
+<body>
+</body>
+</html>

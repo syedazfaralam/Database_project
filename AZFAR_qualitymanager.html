@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quality Manager Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header -->
+<nav class="navbar navbar-dark bg-success">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Quality Manager Dashboard</span>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="py-5 bg-success text-white text-center">
+  <div class="container">
+    <h1 class="display-5">Monitor & Ensure Safe, High-Quality Produce</h1>
+    <p class="lead">Track inspections, monitor storage, and manage defective products</p>
+  </div>
+</section>
+
+<!-- Main Section -->
+<div class="container py-5">
+
+  <!-- Temperature & Humidity Logs -->
+  <h3 class="mb-4 text-center">Temperature & Humidity Logs</h3>
+  <div class="table-responsive mb-5">
+    <table class="table table-bordered table-hover text-center">
+      <thead class="table-success">
+        <tr>
+          <th>Log ID</th>
+          <th>Batch/Lot ID</th>
+          <th>Storage/Transport Location</th>
+          <th>Timestamp</th>
+          <th>Temperature (°C)</th>
+          <th>Humidity (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>LOG001</td>
+          <td>H001</td>
+          <td>Cold Storage 3</td>
+          <td>2025-04-19 14:30</td>
+          <td>3.2</td>
+          <td>80%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Quality Control Inspections -->
+  <h3 class="mb-4 text-center">Quality Inspection Records</h3>
+  <div class="table-responsive mb-5">
+    <table class="table table-bordered table-hover text-center">
+      <thead class="table-success">
+        <tr>
+          <th>Inspection ID</th>
+          <th>Batch/Lot ID</th>
+          <th>Stage</th>
+          <th>Inspector</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Q001</td>
+          <td>H001</td>
+          <td>Post-Harvest</td>
+          <td>Mr. Karim</td>
+          <td>2025-04-18</td>
+          <td>Passed</td>
+          <td>Organic standards met</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Faulty Products Reporting -->
+  <h3 class="mb-4 text-center">Report Faulty or Contaminated Batches</h3>
+  <form>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="batchId" class="form-label">Enter Batch/Lot ID or Barcode</label>
+        <input type="text" id="batchId" class="form-control" placeholder="e.g., H001 or 85920198" required>
+      </div>
+      <div class="col-md-6">
+        <label for="faultReason" class="form-label">Reason for Reporting</label>
+        <input type="text" id="faultReason" class="form-control" placeholder="e.g., Contaminated, spoiled, etc." required>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-danger">Report to System</button>
+  </form>
+
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+  <div class="container">
+    <p class="mb-0">© 2025 PureHarvest Safety | All Rights Reserved</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+/* Ensure the image stays medium size and is responsive */
+.about-image {
+    max-width: 80%; /* Adjust to the size you need */
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Center the image properly */
+#about .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about .col-md-6 {
+    text-align: center;
+}
+
+#about ul {
+    list-style-type: none;
+    padding: 0;
+}

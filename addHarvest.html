@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Harvest Info</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      max-width: 700px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 25px;
+      width: 100%;
+      background: #28a745;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Add Harvest Information</h2>
+    <form action="#" method="POST">
+      <label for="harvestId">Harvest Lot ID:</label>
+      <input type="text" id="harvestId" name="harvestId" placeholder="e.g. HL001" required />
+
+      <label for="cropType">Crop Type:</label>
+      <input type="text" id="cropType" name="cropType" placeholder="e.g. Tomatoes" required />
+
+      <label for="quantity">Quantity (kg):</label>
+      <input type="number" id="quantity" name="quantity" placeholder="e.g. 500" required />
+
+      <label for="harvestDate">Harvest Date:</label>
+      <input type="date" id="harvestDate" name="harvestDate" required />
+
+      <label for="farmerName">Farmer's Name:</label>
+      <input type="text" id="farmerName" name="farmerName" placeholder="e.g. Rahim Uddin" required />
+
+      <label for="location">Farm Location:</label>
+      <input type="text" id="location" name="location" placeholder="e.g. Mymensingh, BD" required />
+
+      <label for="notes">Additional Notes:</label>
+      <textarea id="notes" name="notes" rows="4" placeholder="Any quality details, visual issues, etc."></textarea>
+
+      <button type="submit">Submit Harvest Info</button>
+    </form>
+  </div>
+
+</body>
+</html>

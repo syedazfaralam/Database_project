@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quality Manager | PureHarvest Safety</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">PureHarvest Safety</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="quality_manager.html">Quality Manager</a></li>
+        <li class="nav-item"><a class="nav-link" href="track_product.html">Track Product</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Title -->
+<section class="py-5 text-white bg-success text-center">
+  <div class="container">
+    <h1 class="display-5">Quality Management Dashboard</h1>
+    <p class="lead">Monitor quality inspections and reports across the supply chain.</p>
+  </div>
+</section>
+
+<!-- Quality Data Table -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Inspection Records</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="table-success text-center">
+          <tr>
+            <th>Batch ID</th>
+            <th>Farm Name</th>
+            <th>Inspection Date</th>
+            <th>Inspector</th>
+            <th>Result</th>
+            <th>Comments</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td>BCH2025-01</td>
+            <td>Green Fields Ltd.</td>
+            <td>2025-04-10</td>
+            <td>J. Rahman</td>
+            <td>Pass</td>
+            <td>Meets all quality standards.</td>
+          </tr>
+          <tr>
+            <td>BCH2025-02</td>
+            <td>Fresh Valley Agro</td>
+            <td>2025-04-09</td>
+            <td>S. Alam</td>
+            <td>Fail</td>
+            <td>Contamination detected in storage.</td>
+          </tr>
+          <!-- Add more records as needed -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5 bg-success text-white text-center">
+  <div class="container">
+    <h2>Maintain the Highest Food Quality Standards</h2>
+    <p class="lead">Inspect regularly. Report clearly. Keep consumers safe.</p>
+    <a href="login.html" class="btn btn-light btn-lg">Login to Manage Inspections</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+  <div class="container">
+    <p class="mb-0">© 2025 PureHarvest Safety | All Rights Reserved</p>
+    <p><a href="privacy_policy.html" class="text-white">Privacy Policy</a> | <a href="terms_of_service.html" class="text-white">Terms of Service</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

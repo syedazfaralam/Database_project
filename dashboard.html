@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PureHarvest Safety Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .dashboard-section {
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border: 2px solid #198754;
+      border-radius: 10px;
+    }
+    h3 {
+      color: #198754;
+    }
+  </style>
+</head>
+<body class="bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">PureHarvest Safety Dashboard</a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="track_product.html">Track Product</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Back to Home</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+     <!-- Farmer Dashboard -->
+  <div class="dashboard-section">
+    <h3>Farmer Dashboard</h3>
+    <form onsubmit="handleSubmit(event, 'Farmer Dashboard')">
+      <div class="mb-3">
+        <label>Product Type</label>
+        <input type="text" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label>Quantity</label>
+        <input type="number" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label>Harvest Date</label>
+        <input type="date" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label>Upload Food Safety Test Results</label>
+        <input type="file" class="form-control" />
+      </div>
+      <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+    <hr>
+    <h5>View Batch Status</h5>
+    <p>Status: Processing / In Transit / Delivered</p>
+  </div>
+
+  <!-- Processing Unit Dashboard -->
+  <div class="dashboard-section">
+    <h3>Processing Unit Dashboard</h3>
+    <p>Assigned Harvest Batches: Batch001, Batch002</p>
+    <form onsubmit="handleSubmit(event, 'Processing Unit Dashboard')">
+      <div class="mb-3">
+        <label>Processing Start Time</label>
+        <input type="datetime-local" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label>Processing End Time</label>
+        <input type="datetime-local" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label>Updated Batch Info</label>
+        <textarea class="form-control" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label>Upload Batch Label/Certificate</label>
+        <input type="file" class="form-control" />
+      </div>
+      <button class="btn btn-success" type="submit">Update</button>
+    </form>
+  </div>
+
+  <!-- Store Manager Dashboard -->
+  <div class="dashboard-section">
+    <h3>Store Manager Dashboard</h3>
+    <p>Monitor Food Arrival Status</p>
+    <p>Batch001: Delivered | Batch002: Pending</p>
+    <p>Quality Reports Available</p>
+    <form onsubmit="handleSubmit(event, 'Store Manager Dashboard')">
+      <div class="mb-3">
+        <label>Submit Feedback / Report Issues</label>
+        <textarea class="form-control" required></textarea>
+      </div>
+      <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Quality Manager Dashboard -->
+  <div class="dashboard-section">
+    <h3>Quality Manager Dashboard</h3>
+    <p>Pending Inspection Batches: Batch001</p>
+    <form onsubmit="handleSubmit(event, 'Quality Manager Dashboard')">
+      <div class="mb-3">
+        <label>Quality Test Results</label>
+        <textarea class="form-control" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label>Upload Certificate</label>
+        <input type="file" class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label>Status</label>
+        <select class="form-control" required>
+          <option value="">Select</option>
+          <option>Passed</option>
+          <option>Failed</option>
+        </select>
+      </div>
+      <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+    <hr>
+    <h5>Cold Storage Sensor Data</h5>
+    <p>Temperature: 4°C (Stable)</p>
+  </div>
+
+  <!-- Truck Company Dashboard -->
+  <div class="dashboard-section">
+    <h3>Truck Company Dashboard</h3>
+    <p>Assigned Shipments: Batch001, Batch002</p>
+    <form onsubmit="handleSubmit(event, 'Truck Company Dashboard')">
+      <div class="mb-3">
+        <label>Update Delivery Status</label>
+        <select class="form-control" required>
+          <option value="">Select</option>
+          <option>In Transit</option>
+          <option>Delivered</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label>Expected Delivery Time</label>
+        <input type="datetime-local" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label>Upload GPS Location / Delivery Proof</label>
+        <input type="file" class="form-control" />
+      </div>
+      <button class="btn btn-success" type="submit">Update</button>
+    </form>
+  </div>
+
+  <!-- System Manager Dashboard -->
+  <div class="dashboard-section">
+    <h3>System Manager Dashboard</h3>
+    <p>Monitor Full Traceability Lifecycle</p>
+    <p>User Logs and Status Overview</p>
+    <form onsubmit="handleSubmit(event, 'System Manager Dashboard')">
+      <div class="mb-3">
+        <label>Correct/Update Entry</label>
+        <textarea class="form-control" required></textarea>
+      </div>
+      <button class="btn btn-danger" type="submit">Apply Changes</button>
+    </form>
+  </div>
+</div>
+
+<!-- Bootstrap JS + Custom JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function handleSubmit(event, section) {
+    event.preventDefault();
+    alert(section + " form submitted successfully!");
+    // Optionally clear form fields here:
+    // event.target.reset();
+  }
+</script>
+
+</body>
+</html>

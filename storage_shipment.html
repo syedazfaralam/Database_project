@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cold Storage Dashboard | PureHarvest Safety</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .card-title { font-size: 1.2rem; }
+    .progress { height: 18px; }
+    .analytics-card {
+      border-radius: 10px;
+      padding: 20px;
+      color: white;
+    }
+    .analytics-section .card {
+      min-height: 120px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">PureHarvest Safety</a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="py-5 bg-success text-white text-center">
+  <div class="container">
+    <h1 class="display-5">Cold Storage Manager Dashboard</h1>
+    <p class="lead">Monitor storage units, shipments, and take actions in real-time</p>
+  </div>
+</section>
+
+<!-- Analytics Overview -->
+<section class="py-4 analytics-section bg-light">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-3 mb-3">
+        <div class="card bg-primary analytics-card">
+          <h6>Total Storage Capacity</h6>
+          <h4>3,500 kg</h4>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="card bg-success analytics-card">
+          <h6>Currently Stored</h6>
+          <h4>2,900 kg</h4>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="card bg-warning analytics-card">
+          <h6>Avg Temp (24h)</h6>
+          <h4>4.3°C</h4>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="card bg-danger analytics-card">
+          <h6>Faulty Reports (This Month)</h6>
+          <h4>5</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cold Storage Units Section -->
+<section class="py-4">
+  <div class="container">
+    <h3 class="mb-4 text-center">Cold Storage Units</h3>
+    <div class="row justify-content-center">
+
+      <!-- Storage Unit 1 -->
+      <div class="col-md-5 mb-4">
+        <div class="card shadow border-success">
+          <div class="card-body">
+            <h5 class="card-title text-success fw-bold text-center">Storage ID: CS101</h5>
+            <p>📍 <strong>Location:</strong> Gazipur</p>
+            <p>📦 <strong>Capacity:</strong> 1500 kg</p>
+            <p>📊 <strong>Current Occupancy:</strong> 900 kg</p>
+            <div class="mb-2">
+              <label class="form-label small">Occupancy Status</label>
+              <div class="progress">
+                <div class="progress-bar bg-success" style="width: 60%">60%</div>
+              </div>
+            </div>
+            <p>🌡️ <strong>Avg Temp:</strong> 4.2°C</p>
+            <p>💧 <strong>Avg Humidity:</strong> 75%</p>
+            <div class="d-flex justify-content-between mt-3">
+              <a href="view_logs.html" class="btn btn-outline-primary btn-sm">View Logs</a>
+              <a href="req_main.html" class="btn btn-outline-warning btn-sm">Request Maintenance</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Storage Unit 2 -->
+      <div class="col-md-5 mb-4">
+        <div class="card shadow border-danger">
+          <div class="card-body">
+            <h5 class="card-title text-danger fw-bold text-center">Storage ID: CS102</h5>
+            <p>📍 <strong>Location:</strong> Jessore</p>
+            <p>📦 <strong>Capacity:</strong> 2000 kg</p>
+            <p>📊 <strong>Current Occupancy:</strong> 2000 kg</p>
+            <div class="mb-2">
+              <label class="form-label small">Occupancy Status</label>
+              <div class="progress">
+                <div class="progress-bar bg-danger" style="width: 100%">100%</div>
+              </div>
+            </div>
+            <p>🌡️ <strong>Avg Temp:</strong> 4.2°C</p>
+            <p>💧 <strong>Avg Humidity:</strong> 75%</p>
+            <div class="d-flex justify-content-between mt-3">
+              <a href="view_logs.html" class="btn btn-outline-primary btn-sm">View Logs</a>
+              <a href="req_main.html" class="btn btn-outline-warning btn-sm">Request Maintenance</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- View Shipments Button -->
+    <div class="text-center mt-4">
+      <a href="viewshipments.html" class="btn btn-success btn-lg">View All Shipments</a>
+    </div>
+  </div>
+</section>
+
+<!-- Faulty Product Reporting Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h4 class="text-center mb-4">Report Faulty Product or Harvest Batch</h4>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <label for="faultyInput" class="form-label">Enter Barcode or Batch Number</label>
+            <input type="text" class="form-control" id="faultyInput" placeholder="e.g., HB2451 or 0892347592" required />
+          </div>
+          <div class="mb-3">
+            <label for="issueType" class="form-label">Select Issue Type</label>
+            <select class="form-select" id="issueType" required>
+              <option selected disabled>Choose...</option>
+              <option>Temperature Deviation</option>
+              <option>Packaging Damage</option>
+              <option>Rotten/Fungus Detected</option>
+              <option>Wrong Labeling</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="photoUpload" class="form-label">Upload Photo (optional)</label>
+            <input type="file" class="form-control" id="photoUpload" />
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-danger btn-lg">Report to Quality Manager</button>
+          </div>
+        </form>
+        <p class="text-muted mt-2 text-center">* Quality Manager will be notified for inspection (backend integration pending)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+  <div class="container">
+    <p class="mb-0">© 2025 PureHarvest Safety | All Rights Reserved</p>
+  </div>
+</footer>
+
+</body>
+</html>
