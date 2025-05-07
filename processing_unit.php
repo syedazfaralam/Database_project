@@ -1,3 +1,16 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = ""; // or your DB password
+$database = "safefood"; // replace with your DB
+
+$conn = new mysqli($servername, $username, $password, $database);
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -201,6 +214,63 @@
     </table>
   </div>
 </div>
+
+
+ <!-- 4. Requests Section -->
+ <h4 class="section-title">📝 Requests</h4>
+
+<?php
+$sql = "SELECT hpm.harvest_id, hpm.processing_unit_id, 
+               hi.harvest_lot_id, hi.origin, hi.variety, hi.harvest_date, hi.certification,
+               pu.location, pu.type, pu.status
+        FROM harvest_processing_mapping hpm
+        JOIN harvest_info hi ON hpm.harvest_id = hi.id
+        JOIN processing_units pu ON hpm.processing_unit_id = pu.unit_id";
+$result = $conn->query($sql);
+?>
+
+<?php if ($result->num_rows > 0): ?>
+  <div class="table-responsive mb-5">
+    <table class="table table-bordered text-center align-middle">
+      <thead class="table-success">
+        <tr>
+          <th>Harvest Lot ID</th>
+          <th>Origin</th>
+          <th>Variety</th>
+          <th>Harvest Date</th>
+          <th>Certification</th>
+          <th>Processing Unit Location</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php while($row = $result->fetch_assoc()): ?>
+          <tr>
+            <td><?= htmlspecialchars($row['harvest_lot_id']) ?></td>
+            <td><?= htmlspecialchars($row['origin']) ?></td>
+            <td><?= htmlspecialchars($row['variety']) ?></td>
+            <td><?= htmlspecialchars($row['harvest_date']) ?></td>
+            <td><?= htmlspecialchars($row['certification']) ?></td>
+            <td><?= htmlspecialchars($row['location']) ?></td>
+            <td><?= htmlspecialchars($row['type']) ?></td>
+            <td><?= htmlspecialchars($row['status']) ?></td>
+            <td><button class="btn btn-sm btn-success">Assign Barcodes</button></td>
+          </tr>
+        <?php endwhile; ?>
+      </tbody>
+    </table>
+  </div>
+<?php else: ?>
+  <p class="text-muted">No pending requests found.</p>
+<?php endif; ?>
+
+
+
+
+
+
 
 <!-- Footer -->
 <footer class="bg-dark text-white text-center py-3">
